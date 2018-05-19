@@ -11,21 +11,25 @@ My advisor's research was in [fractal based active contour models](https://www.r
 # Results / Demo
 
 ***Main Window***
+
 ![MainWindow](https://github.com/joshbosley/Active-Contours/blob/master/images/screen%20shots/mainWindow.png?raw=true)
 
 From here, video, camera, or an image can be loaded to interact with a snake.
 
 ***Parameters***
+
 ![Params](https://github.com/joshbosley/Active-Contours/blob/master/images/screen%20shots/options.png?raw=true)
 
 Launch parameters for the program. (Max points, α, β, γ, display, etc)
 
 ***Snake Start***
+
 ![SnakeStart](https://github.com/joshbosley/Active-Contours/blob/master/images/screen%20shots/selectedPoints.png?raw=true)
 
 To initialize the snake, some points are selected by hand before hitting start.
 
 ***Snake Result***
+
 ![Result](https://github.com/joshbosley/Active-Contours/blob/master/images/screen%20shots/snakeComplete.png?raw=true)
 
 The final result of the run. The red squares are the point's "neighborhood" as mentioned in the PDF link above. 
