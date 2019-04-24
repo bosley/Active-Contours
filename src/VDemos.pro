@@ -61,12 +61,21 @@ FORMS += \
     paraminterface.ui \
     custonsnakeparams.ui
 
-INCLUDEPATH += /usr/local/Cellar/opencv/3.4.1_2/include \
+unix {
+    CONFIG += link_pkgconfig
+    PKGCONFIG += opencv
+}
 
-LIBS += -L/usr/local/Cellar/opencv/3.4.1_2/lib \
-     -lopencv_core \
-     -lopencv_imgproc \
-     -lopencv_features2d\
-     -lopencv_highgui\
-     -lopencv_video\
-     -lopencv_videoio
+mac {
+    INCLUDEPATH += /usr/local/Cellar/opencv/3.4.1_2/include \
+
+    LIBS += -L/usr/local/Cellar/opencv/3.4.1_2/lib \
+         -lopencv_core \
+         -lopencv_imgproc \
+         -lopencv_features2d\
+         -lopencv_highgui\
+         -lopencv_video\
+         -lopencv_videoio
+
+}
+

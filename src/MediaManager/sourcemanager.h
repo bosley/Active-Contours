@@ -2,7 +2,14 @@
 #define SOURCEMANAGER_H
 
 #include <string>
-#include <opencv2/videoio/videoio.hpp>
+
+#ifdef __linux__
+    #include <opencv2/video/video.hpp>
+    #include <opencv2/highgui/highgui.hpp>
+#else
+    #include <opencv2/videoio/videoio.hpp>
+#endif
+
 
 class SourceManager
 {
