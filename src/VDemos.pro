@@ -61,12 +61,40 @@ FORMS += \
     paraminterface.ui \
     custonsnakeparams.ui
 
-INCLUDEPATH += /usr/local/Cellar/opencv/3.4.1_2/include \
 
-LIBS += -L/usr/local/Cellar/opencv/3.4.1_2/lib \
-     -lopencv_core \
-     -lopencv_imgproc \
-     -lopencv_features2d\
-     -lopencv_highgui\
-     -lopencv_video\
-     -lopencv_videoio
+#INCLUDEPATH += /usr/local/Cellar/opencv/3.4.1_2/include \
+
+#LIBS += -L/usr/local/Cellar/opencv/3.4.1_2/lib \
+#     -lopencv_core \
+#     -lopencv_imgproc \
+#     -lopencv_features2d\
+#     -lopencv_highgui\
+#     -lopencv_video\
+#     -lopencv_videoio
+
+#CONFIG(release, debug|release):{
+#    LIBS += D:/OpenCV-3.4.5/opencv/build/x64/vc15/bin/opencv_world345.dll
+#    LIBS += D:/OpenCV-3.4.5/opencv/build/x64/vc15/lib/opencv_world345.lib
+#}
+#CONFIG(debug, debug|release):{
+#    LIBS += D:/OpenCV-3.4.5/opencv/build/x64/vc15/bin/opencv_world345d.dll
+#    LIBS += D:/OpenCV-3.4.5/opencv/build/x64/vc15/lib/opencv_world345d.lib
+#}
+
+
+
+# Default rules for deployment.
+qnx: target.path = /tmp/$${TARGET}/bin
+else: unix:!android: target.path = /opt/$${TARGET}/bin
+!isEmpty(target.path): INSTALLS += target
+#
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../OpenCV-3.4.5/opencv/build/x64/vc15/lib/ -lopencv_world345
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../OpenCV-3.4.5/opencv/build/x64/vc15/lib/ -lopencv_world345d
+
+INCLUDEPATH += D:\OpenCV-3.4.5\opencv\build\include
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../OpenCV-3.4.5/opencv/build/x64/vc15/lib/ -lopencv_world345
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../OpenCV-3.4.5/opencv/build/x64/vc15/lib/ -lopencv_world345d
+
+INCLUDEPATH += $$PWD/../../../OpenCV-3.4.5/opencv/build/x64/vc15
+DEPENDPATH += $$PWD/../../../OpenCV-3.4.5/opencv/build/x64/vc15
